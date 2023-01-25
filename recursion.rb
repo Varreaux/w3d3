@@ -1,77 +1,77 @@
-# def Warmup(min, max)
+def Warmup(min, max)
     
-#     # arr = []
-#     # i = min
-#     # while i < max
-#     #     arr << i
-#     #     i += 1
-#     # end
-#     # arr
+    arr = []
+    i = min
+    while i < max
+        arr << i
+        i += 1
+    end
+    arr
 
 
-# end
+end
 
 
-# p Warmup(1,5)
+p Warmup(1,5)
 
 
-# def Warmup(min, max)
+def Warmup(min, max)
     
-# return [] if min > max - 1
+return [] if min > max - 1
 
-# [min] + Warmup(min + 1, max)
-
-
-# end
+[min] + Warmup(min + 1, max)
 
 
-# p Warmup(1,5)
+end
+
+
+p Warmup(1,5)
 
 
 
-# def exponentiation(base,exponent)
-#     if exponent == 0
-#         return 1
-#     end
+def exponentiation(base,exponent)
+    if exponent == 0
+        return 1
+    end
 
-#     base * exponentiation(base, exponent - 1)
-# end
+    base * exponentiation(base, exponent - 1)
+end
 
-# def exponentiation(base,exponent)
-#     return 1 if exponent == 0
+def exponentiation(base,exponent)
+    return 1 if exponent == 0
 
-#     if exponent % 2 == 0 
-#       exponentiation(base, exponent/2) **2
+    if exponent % 2 == 0 
+      exponentiation(base, exponent/2) **2
       
-#     else
-#         base * (exponentiation(base,(exponent-1)/2)**2)
-#     end
+    else
+        base * (exponentiation(base,(exponent-1)/2)**2)
+    end
 
   
 
-# end
+end
 
-# p exponentiation(3,2)
-
-
+p exponentiation(3,2)
 
 
-# def deep_dup(arr)
 
-#    farr = []
 
-#    arr.each do |ele|
-#     if ele.to_a?(Array)
-#         farr << deep_dup(ele)
+def deep_dup(arr)
+
+   farr = []
+
+   arr.each do |ele|
+    if ele.to_a?(Array)
+        farr << deep_dup(ele)
         
-#     else
-#         farr << ele
-#     end
+    else
+        farr << ele
+    end
 
     
-#     farr
+    farr
 
-# end
+end
 
 
 def fibonacci_recursive(n)
@@ -86,3 +86,27 @@ end
 
 
 p fibonacci_recursive(6)
+
+
+def fibonacci_recursive(n)
+    final_arr = [0,1,1]
+
+    i = 0
+    while(final_arr.length < n)
+
+        final_arr.push(final_arr[-1]+ final_arr[-2])
+
+        i+=1
+    end
+
+    return final_arr
+end
+
+
+
+p fibonacci_recursive(6)
+
+
+
+
+
