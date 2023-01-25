@@ -55,3 +55,23 @@ p exponentiation(3,2)
 
 
 
+
+def deep_dup(arr)
+
+   farr = []
+
+   arr.each do |ele|
+    if ele.to_a?(Array)
+        farr << deep_dup(ele)
+        
+    else
+        farr << ele
+    end
+
+    
+    farr
+
+end
+
+
+
