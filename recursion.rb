@@ -74,19 +74,15 @@
 # end
 
 
-def fibonacci(n)
-    
-  
-    return [] if n == 0
+def fibonacci_recursive(n)
+    return [] if n == 0 
     return [0] if n == 1
-    return [0,1] if n == 2
-    
+    return [0, 1] if n == 2
 
-    fibonacci(n-1) + fibonacci(n-2)
-
+        fib_list = fibonacci_recursive(n-1)
+        fib_list << (fib_list[-1] + fib_list[-2])
+        return fib_list
 end
 
 
-p fibonacci(2)
-
-
+p fibonacci_recursive(6)
