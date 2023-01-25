@@ -110,22 +110,29 @@
 
 
 def binary_search(arr, target)
-
-    return arr.length / 2 if  arr[(arr.length / 2)] == target
-    return nil if arr.length == 1
-    
+    return nil if arr.length == 0
 
     middle = (arr.length/2)
     
-        if target > arr[middle]
-            arr[0] + binary_search(arr[(middle+1)..-1], target)
-        else
-            arr[0] + binary_search(arr[1..middle], target)
-        end
+    if target == arr[middle]
+        middle 
+    elsif target > arr[middle] 
+        result = binary_search(arr[(middle + 1)..-1], target)
+        result + middle + 1 unless result == nil
+    else
+        binary_search(arr[0...middle], target)
+    end
 
 end
 
-p binary_search([ 1,2, 3, 4, 5, 6,9,8,10], 9) # => 5
+p binary_search([], 10) # => nil
+p binary_search([1, 2, 3, 4, 5, 6, 8, 9, 10], 3) # => 6
+p binary_search([6, 8, 9, 10], 6)
+p binary_search([6, 8], 6) 
+p binary_search([6], 6)
+
+def 
+
 
 
 
